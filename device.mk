@@ -6,6 +6,8 @@
 
 # Inherit vendor
 $(call inherit-product, vendor/xiaomi/andromeda/andromeda-vendor.mk)
+$(call inherit-product, vendor/google_pixel/product.mk)
+$(call inherit-product, vendor/partner_gms/products/gms.mk)
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2340
@@ -258,10 +260,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml \
-
-# Power
-PRODUCT_PACKAGES += \
-    android.hardware.power@1.2-service
 
 # Public Libraries
 PRODUCT_COPY_FILES += \
